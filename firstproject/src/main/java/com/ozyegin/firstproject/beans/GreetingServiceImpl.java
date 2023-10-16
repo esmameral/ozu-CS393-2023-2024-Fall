@@ -33,8 +33,7 @@ public class GreetingServiceImpl implements GreetingService {
 	
 	@Override
 	public String sayHello() {
-		//return messageBean.getHelloMessage()+ " Current date-time:"+df.format(new Date()) ;
-		return "ööö" ;
+		return messageBean.getHelloMessage()+ " Current date-time:"+df.format(new Date()) ;
 	}
 
 }
