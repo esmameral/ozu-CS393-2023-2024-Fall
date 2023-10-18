@@ -5,6 +5,7 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
@@ -13,14 +14,16 @@ import org.springframework.stereotype.Component;
 public class GreetingServiceImpl implements GreetingService {
 	
 	private int randomNumber=(int) (Math.random()*100);
-	private String message="How are you ? ";
+	@Value("${greeting.message}")
+	private String newMessage;
 	
-	@Autowired()
+	
+	@Autowired
 	private MessageBean messageBean;
 	
 	
 	@Autowired
-	@Lazy//without Lazy throws "BeanCurrentlyInCreationException"
+	//@Lazy//without Lazy throws "BeanCurrentlyInCreationException"
 	private SimpleDateFormat df;
 	
 	public void setDf(SimpleDateFormat df) {
@@ -33,7 +36,7 @@ public class GreetingServiceImpl implements GreetingService {
 	
 	@Override
 	public String sayHello() {
-		return messageBean.getHelloMessage()+ " Current date-time:"+df.format(new Date()) ;
+		return newMessage+" "+  messageBean.getHelloMessage()+ " Current date-time:"+df.format(new Date()) ;
 	}
 
 }
