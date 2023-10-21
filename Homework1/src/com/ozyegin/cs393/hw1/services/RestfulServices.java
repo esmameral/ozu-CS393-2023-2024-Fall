@@ -6,15 +6,19 @@ import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ozyegin.cs393.hw1.beans.DailyDiscountSelector;
 import com.ozyegin.cs393.hw1.beans.ProductBean;
+import com.ozyegin.cs393.hw1.beans.DailyDiscountSelector;
 
 @RestController
 public class RestfulServices {
-	ProductBean productBean;
+	private ProductBean productBean;
 	
-	String welcomeMessage;
+	private String welcomeMessage;
 	
-	String headerMessage;
+	private String headerMessage;
+	
+	private DailyDiscountSelector discountSelector;
 	
 	@GetMapping(value="/products")
 	public List<String> listProducts() {
