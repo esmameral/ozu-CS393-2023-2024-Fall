@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component("tr")
-@Profile("turkish")
+@Profile("!english")
 public class MessageBeanTrImpl implements MessageBean {
 
 	@Override
