@@ -4,21 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
-   
-
+ 
 	private int id;
-    
-    
 	private String name;
-    
 	private String code;
 	private int credit;
-	
-	
 	private List<Student> students=new ArrayList<>();
 	
-	
-
 	public List<Student> getStudents() {
 		return students;
 	}
@@ -26,8 +18,6 @@ public class Course {
 	public void setStudents(List<Student> students) {
 		this.students = students;
 	}
-
-	
 
 	public Course() {
 		super();

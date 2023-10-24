@@ -6,7 +6,11 @@ import java.util.List;
 public class Student  {
 	private int id;
 	private String name;
+	
+	public Student() {
+		super();
 
+	}
 	
 	public int getId() {
 		return id;
@@ -28,16 +32,18 @@ public class Student  {
 	private List<Course> courses = new ArrayList<>();
 
 	
-	public Student() {
-		super();
-
-	}
+	
 
 	public Student(String name, String department) {
 		super();
 		setName(name);
 		this.department = department;
 	}
+	public Student(int id, String name) {
+		this.id=id;
+		this.name=name;
+	}
+
 	public List<Course> getCourses() {
 		return courses;
 	}
