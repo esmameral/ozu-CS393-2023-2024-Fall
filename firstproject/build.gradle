@@ -24,6 +24,8 @@ dependencies {
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'joda-time:joda-time:2.2'
+	//added for JUnit conflict error: 
+    //NoSuchMethodError: 'java.util.Set org.junit.platform.engine.TestDescriptor.getAncestors()
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
