@@ -25,7 +25,7 @@ class RepositoryTests {
 	@Test
 	void testSaveInstructorAndCourses() {
 		Instructor instructor = new Instructor();
-		instructor.setName("Feyza", instructor);
+		instructor.setName("Feyza");
 		instructor.setRoomNumber("222");
 
 		Course course1 = new Course("CS393", "Backend app", 4);
@@ -44,7 +44,7 @@ class RepositoryTests {
 	@Test
 	void testSaveInstructor() {
 		Instructor instructor = new Instructor();
-		instructor.setName("Kerem", instructor);
+		instructor.setName("Kerem");
 		instructor.setRoomNumber("301");
 		instructorRepository.save(instructor);
 		assertTrue(instructor.getId() > 0);
@@ -85,7 +85,7 @@ class RepositoryTests {
 	
 	void testOrphanRemoval() {
 		Instructor instructor = new Instructor();
-		instructor.setName("Kerem", instructor);
+		instructor.setName("Kerem");
 		instructor.setRoomNumber("123");
 
 		Course course1 = new Course("CS202", "CS202 ", 6);
@@ -117,15 +117,15 @@ class RepositoryTests {
 	}
 	
 	@Test
-	@Transactional
-	@Commit
+//	@Transactional
+//	@Commit
 	void testJPQL() {
-		List<Course> courses= instructorRepository.findAllCoursesWithInsId(2);
+		List<Course> courses= instructorRepository.findAllCoursesWithInsId(22);
 		for (Course course : courses) {
 			System.out.println(course);
 		}
 		
-		instructorRepository.updateIns(2,1);
+		instructorRepository.updateIns(22,33);
 
 	}
 
