@@ -13,6 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Transient;
 
 
@@ -24,6 +25,8 @@ public class Course {
 	private String name;
 	private String code;
 	private int credit;
+	@OneToMany(mappedBy = "course")
+	private List<Subject> subjects=new ArrayList<Subject>();
 	
 	@ManyToMany
 	@JoinTable(name = "REL_COURSE_STUDENT", 
@@ -115,6 +118,14 @@ public class Course {
 			return false;
 		Course other = (Course) obj;
 		return id == other.id;
+	}
+
+	public List<Subject> getSubjects() {
+		return subjects;
+	}
+
+	public void setSubjects(List<Subject> subjects) {
+		this.subjects = subjects;
 	}
 	 
 
