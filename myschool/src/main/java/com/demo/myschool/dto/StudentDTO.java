@@ -1,5 +1,7 @@
 package com.demo.myschool.dto;
-
+/**
+ * Manuel mapping DTO example
+ */
 public class StudentDTO {
 	private String program;
 	private int id;
