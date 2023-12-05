@@ -3,6 +3,8 @@ package com.demo.myschool.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
@@ -15,6 +17,8 @@ import jakarta.persistence.Table;
 public class Student extends Person {
 	
 	private String program;
+	
+	private String address;
 	@OneToOne
 	private Transcript transcript;
 
@@ -52,6 +56,14 @@ public class Student extends Person {
 	@Override
 	public String toString() {
 		return "Student [id=" + getId() + ", name=" + getName() + ", program=" + program + "]";
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 }

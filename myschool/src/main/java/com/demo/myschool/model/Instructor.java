@@ -11,7 +11,8 @@ import jakarta.persistence.OneToMany;
 //@DiscriminatorValue(value="INSTRUCTOR")
 public class Instructor extends Person {
 	private String roomNumber;
-
+	private String workingArea;
+	
 	@OneToMany(mappedBy = "instructor", cascade = {CascadeType.ALL})
 	private List<Course> courses = new ArrayList<>();
 
@@ -38,6 +39,14 @@ public class Instructor extends Person {
 	@Override
 	public String toString() {
 		return "Instructor [id=" + getId() + ", name=" + getName() + ", roomNumber=" + getRoomNumber() + "]";
+	}
+
+	public String getWorkingArea() {
+		return workingArea;
+	}
+
+	public void setWorkingArea(String workingArea) {
+		this.workingArea = workingArea;
 	}
 
 	
