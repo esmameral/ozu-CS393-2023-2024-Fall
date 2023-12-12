@@ -10,5 +10,7 @@ public interface StudentService {
 	public StudentDTO save(StudentDTO student);
 	//public StudentDTO findStudent(int id);
 	public StudentNameOnly getStudentById(int id);
+	
+	public List<StudentDTO> getAllStudentsForCourse(String course);
 
 }

@@ -53,5 +53,12 @@ public class StudentServiceImpl implements StudentService {
 	       return repository.findStudentById( id);
 	   }
 
+	@Override
+	public List<StudentDTO> getAllStudentsForCourse(String course) {
+		List<Student> studentList= repository.findByCoursesCode(course);
+		
+		return studentMapper.studentListToStudentDTOList(studentList);
+	}
+
 
 }

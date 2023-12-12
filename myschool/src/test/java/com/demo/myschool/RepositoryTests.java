@@ -2,26 +2,45 @@ package com.demo.myschool;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.Iterator;
 import java.util.List;
 
-import org.hibernate.annotations.Comment;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Commit;
 
 import com.demo.myschool.model.Course;
 import com.demo.myschool.model.Instructor;
+import com.demo.myschool.model.Student;
 import com.demo.myschool.repository.InstructorRepository;
-
-import jakarta.transaction.Transactional;
+import com.demo.myschool.repository.StudentRepository;
+import com.demo.myschool.service.CourseService;
+import com.demo.myschool.service.StudentService;
 
 @SpringBootTest
 class RepositoryTests {
 	@Autowired
 	InstructorRepository instructorRepository;
+	
+	@Autowired
+	StudentRepository studentRepository;
 
+	@Autowired
+	CourseService service;
+	
+
+	@Test
+	void testEnrollStudent() {
+		service.enrollStudent("CS201", 5002);
+	}
+	
+	
+	
+	@Test
+	void testGetStudents() {
+		List<Student> list= studentRepository.findByCoursesCode("CS393");
+		assertTrue(list.size()==2);
+	}
+	
 	@Test
 	void testSaveInstructorAndCourses() {
 		Instructor instructor = new Instructor();

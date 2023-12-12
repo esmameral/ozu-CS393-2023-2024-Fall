@@ -6,6 +6,12 @@ public class StudentDTO {
 	private String program;
 	private int id;
 	private String name;
+	
+	
+	
+	public StudentDTO() {
+		super();
+	}
 	public String getProgram() {
 		return program;
 	}
