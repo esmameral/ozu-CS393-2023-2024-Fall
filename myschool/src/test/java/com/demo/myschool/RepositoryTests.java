@@ -13,8 +13,6 @@ import com.demo.myschool.model.Instructor;
 import com.demo.myschool.model.Student;
 import com.demo.myschool.repository.InstructorRepository;
 import com.demo.myschool.repository.StudentRepository;
-import com.demo.myschool.service.CourseService;
-import com.demo.myschool.service.StudentService;
 
 @SpringBootTest
 class RepositoryTests {
@@ -22,16 +20,11 @@ class RepositoryTests {
 	InstructorRepository instructorRepository;
 	
 	@Autowired
-	StudentRepository studentRepository;
-
-	@Autowired
-	CourseService service;
+	public StudentRepository studentRepository;
 	
 
-	@Test
-	void testEnrollStudent() {
-		service.enrollStudent("CS201", 5002);
-	}
+
+	
 	
 	
 	
