@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Display selected course's enrolled students</title>
+    <script src="scripts/functions.js"></script>
+</head>
+
+<body>
+    <h1>Enter new course information below:</h1>
+
+    Select a course:
+    <select name="courseList">
+        <option value="CS393">Developing Backend Application</option>
+        <option value="CS391">Developing Web Applications</option>
+        <option value="CS202">Database Management</option>
+    </select>
+    <input type="button" name="Display Students" value="Show Students" onclick="alert('Hello')">
+    <input type="button" name="Hide Students" value="Hide Students" onclick="sayHello()">
+    <input type="button" name="sayHello2" value="sayHello2" onclick="sayHello2()">
+    <p id="message1">Student List will be displayed here</p>
+    <p id="message2">Second paragraph</p>
+
+    <table border="1">
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Program</th>
+        </tr>
+        <tr>
+            <td>S123456</td>
+            <td>Ali Karaca</td>
+            <td>CS</td>
+        </tr>
+        <tr>
+            <td>S876165</td>
+            <td>Feyza Demir</td>
+            <td>CS</td>
+        </tr>
+        <tr>
+            <td>S99881</td>
+            <td>Efsa Kara</td>
+            <td>IE</td>
+        </tr>
+
+
+
+    </table>
+<script>
+    function sayHello(){
+        alert('Hello from JS!!');
+    }
+</script>
+
+</body>
+
+</html>
