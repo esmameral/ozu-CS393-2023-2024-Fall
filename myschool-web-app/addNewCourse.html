@@ -4,28 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Add new course</title>
+    <script src="scripts/functions.js"></script>
 </head>
 
-<body>
+<body onload="printInstructors()">
     <h1>Enter new course information below</h1>
 
     <form method="post" action="./success.html">
-        <input type="text" name="code" placeholder="Course code" maxlength="6" minlength="4" required>
+        <input type="text" id="courseCode" name="code" placeholder="Course code" maxlength="6" minlength="4" required>
         <br/>
         <input type="text" name="name" placeholder="Course name" maxlength="30" minlength="10" required>
         <br/>
         <input type="number" name="credit" placeholder="credit" min="3" max="8" required>
         <br/>
-        <select name="insList" size="3" >
-            <option value="1">Hasan Sozer</option>
-            <option value="2">Cansu Karaca</option>
-            <option value="3">Ali Demir</option>
-            <option value="4">Ayse Adana</option>
+        <select id="instList" name="insList" size="1" >
+           
 
         </select>
         <input type="submit" name="Save" >
+        
     </form>
-
+    
 </body>
 
 </html>
