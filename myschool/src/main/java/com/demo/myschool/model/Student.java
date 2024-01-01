@@ -11,7 +11,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "TB_STUDENT")
+@Table(name = "STUDENT")
 //@DiscriminatorValue(value="STUDENT")
 
 public class Student extends Person {

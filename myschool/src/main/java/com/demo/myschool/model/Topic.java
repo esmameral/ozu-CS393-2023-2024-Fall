@@ -9,8 +9,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "course_subject")
-public class Subject {
+@Table(name = "TOPIC")
+public class Topic {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;

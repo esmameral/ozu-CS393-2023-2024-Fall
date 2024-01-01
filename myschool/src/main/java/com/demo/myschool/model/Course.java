@@ -25,7 +25,7 @@ public class Course {
 	private String code;
 	private int credit;
 	@OneToMany(mappedBy = "course")
-	private List<Subject> subjects=new ArrayList<Subject>();
+	private List<Topic> topics=new ArrayList<Topic>();
 	
 	@ManyToMany
 	@JoinTable(name = "REL_COURSE_STUDENT", 
@@ -119,13 +119,13 @@ public class Course {
 		return id == other.id;
 	}
 
-	public List<Subject> getSubjects() {
-		return subjects;
+	public List<Topic> getTopics() {
+		return topics;
 	}
 
-	public void setSubjects(List<Subject> subjects) {
-		this.subjects = subjects;
+	public void setTopics(List<Topic> topics) {
+		this.topics = topics;
 	}
-	 
 
+	
 }

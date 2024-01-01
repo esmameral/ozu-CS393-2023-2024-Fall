@@ -59,7 +59,11 @@ public class StudentRestServices {
 	public ResponseEntity<StudentDTO> save(@RequestBody StudentDTO student) {
 		StudentDTO dto = studentService.save(student);
 		return ResponseEntity.status(HttpStatus.CREATED).body(dto);
-
+	}
+	
+	@GetMapping(value = "/{courseCode}")
+	public List<StudentDTO> getAllStudentsForCourse(@PathVariable("courseCode") String courseCode) {
+		return studentService.getAllStudentsForCourse(courseCode);
 	}
 
 }
