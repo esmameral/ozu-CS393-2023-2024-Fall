@@ -11,15 +11,11 @@
 <body>
 	<a href="index.html"><img src="images/ou_logo_eng.jpg"></a>
 
-	<h3>Select a course:</h3>
-	<select id="courseList"> </select>
-	<input type="button" name="displayStudents" value="Display Students" onclick="displayStudents()">
-	<table border="1" id="studentTable">
-	</table>
+	<div id="courseTable"></div>
 	<script>
-		getCourses(printCourses);//printCourses is a function name. this is a callback function
+		getCourses(printCoursesAsTable);//printCoursesAsTable is a function name. this is a callback function
 	</script>
-
+	<a href="addNewCourse.html">Add new course</a>
 </body>
 
 </html>

@@ -2,29 +2,50 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Add new course</title>
-    <script src="scripts/functions.js"></script>
+	<meta charset="UTF-8">
+	<title>Add new course</title>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+	<script src="scripts/functions.js"></script>
+
 </head>
 
-<body onload="printInstructors()">
-    <h1>Enter new course information below</h1>
+<body>
+	<a href="index.html"><img src="images/ou_logo_eng.jpg" ></a>
 
-    <form method="post" action="./success.html">
-        <input type="text" id="courseCode" name="code" placeholder="Course code" maxlength="6" minlength="4" required>
-        <br/>
-        <input type="text" name="name" placeholder="Course name" maxlength="30" minlength="10" required>
-        <br/>
-        <input type="number" name="credit" placeholder="credit" min="3" max="8" required>
-        <br/>
-        <select id="instList" name="insList" size="1" >
-           
+	<h2>Enter new course information below</h2>
 
-        </select>
-        <input type="submit" name="Save" >
-        
-    </form>
-    
+	<form method="post"  onsubmit="return createCourse()">
+		<table>
+			<tr>
+				<td>Course code</td>
+				<td><input type="text" id="courseCode" name="code" maxlength="5" minlength="3"
+						size="5"></td>
+			</tr>
+			<tr>
+				<td>Course name</td>
+				<td><input type="text" id="name" name="name" maxlength="50" minlength="5"
+						size="50"></td>
+			</tr>
+			<tr>
+				<td>Credit</td>
+				<td><input type="number" id="credit" name="credit" min="3" max="8" ></td>
+			</tr>
+			<tr>
+				<td>Instructor</td>
+				<td><select id="instList" name="insList" size="1"></select></td>
+			</tr>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" name="Save"></td>
+			</tr>
+		</table>
+	</form>
+	<div id="message"></div>
+	<a href="displayCourses.html">Display Courses</a>
+	<script>
+		getInstructors();
+	</script>
 </body>
 
 </html>
