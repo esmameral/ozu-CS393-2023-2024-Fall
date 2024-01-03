@@ -1,12 +1,13 @@
 package com.demo.myschool.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.demo.myschool.dto.CreateCourseDTO;
+import com.demo.myschool.dto.CourseDTO;
 import com.demo.myschool.dto.mapper.CourseMapper;
 import com.demo.myschool.model.Course;
 import com.demo.myschool.model.Instructor;
@@ -50,7 +51,7 @@ public class CourseServiceImpl implements CourseService {
 
 	@Override
 	@Transactional
-	public int createCourse(CreateCourseDTO dto) {
+	public int createCourse(CourseDTO dto) {
 		Course c=courseMapper.toCourse(dto);
 		Instructor instructor=instructorRepository.findById(dto.getInstructorId()).get();
 		c.setInstructor(instructor);
@@ -58,6 +59,11 @@ public class CourseServiceImpl implements CourseService {
 		courseRepository.save(c);
 		return c.getId();
 		
+	}
+
+	@Override
+	public List<CourseDTO> getAll() {
+		return courseMapper.map(courseRepository.findAll()) ;
 	}
 
 }

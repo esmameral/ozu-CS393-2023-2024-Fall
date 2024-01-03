@@ -1,13 +1,13 @@
 package com.demo.myschool.dto;
 
-public class CreateCourseDTO {
+public class CourseDTO {
 	private int id;
 	private String name;
 	private String code;
 	private int credit;
 	private int instructorId;
 	
-	public CreateCourseDTO(int id, String name, String code, int credit, int instructorId) {
+	public CourseDTO(int id, String name, String code, int credit, int instructorId) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -15,7 +15,7 @@ public class CreateCourseDTO {
 		this.credit = credit;
 		this.instructorId = instructorId;
 	}
-	public CreateCourseDTO() {
+	public CourseDTO() {
 		super();
 	}
 	public int getId() {
